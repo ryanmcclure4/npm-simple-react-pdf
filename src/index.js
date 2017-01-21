@@ -1,6 +1,6 @@
+import PDF from 'pdfjs-dist/build/pdf.combined.js';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import PDF from 'pdfjs-dist/build/pdf.combined.js';
 
 export default class SimplePDF extends React.Component {
 
@@ -59,6 +59,8 @@ export default class SimplePDF extends React.Component {
           page.render(renderContext);
         });
       }
+
+      if (this.props.onLoadComplete) this.props.onLoadComplete();
     });
   }
 
