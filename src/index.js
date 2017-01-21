@@ -15,6 +15,7 @@ export default class SimplePDF extends React.Component {
 
     // get node for this react component
     var node = ReactDOM.findDOMNode(this).getElementsByClassName("S-PDF-ID")[0];
+    var onLoadComplete = this.props.onLoadComplete;
 
     // clean for update
     node.innerHTML = "";
@@ -60,7 +61,7 @@ export default class SimplePDF extends React.Component {
         });
       }
 
-      if (this.props.onLoadComplete) this.props.onLoadComplete();
+      if (onLoadComplete) onLoadComplete();
     });
   }
 
